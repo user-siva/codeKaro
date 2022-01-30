@@ -7,8 +7,23 @@ body {
 }
 
 .pane {
-  height: 60vh;
+  height: 90vh;
   display: flex;
+}
+
+.nav-tabs .nav-link {
+  margin-bottom: -3px !important;
+}
+
+.nav-tabs .nav-link.active  {
+  background-color: hsl(200, 13%, 23%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.CodeMirror-code {
+  min-height: 500px;
+  overflow: hidden !important;
 }
 
 .editor-container {
@@ -16,8 +31,10 @@ body {
   flex-basis: 0;
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
-  background-color: hsl(225, 6%, 25%);
+  padding: 1rem;
+  background-color: hsl(200, 13%, 23%);
+  margin: none;
+  height: 583px;
 }
 
 .editor-container.collapsed {
@@ -29,31 +46,17 @@ body {
   overflow: hidden !important;
 }
 
-.expand-collapse-btn {
-  margin-left: 0.5rem;
-  background: none;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.editor-title {
-  display: flex;
-  justify-content: space-between;
-  background-color: hsl(225, 6%, 13%);
-  color: white;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
-  border-top-right-radius: 0.5rem;
-  border-top-left-radius: 0.5rem;
-}
-
 .CodeMirror {
   height: 100% !important;
 }
 
-.code-mirror-wrapper {
+.clay {
   flex-grow: 1;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   overflow: hidden;
+  
+  
 }
+
+

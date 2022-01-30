@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from "react";
 import Editor from "./Editor";
 import useLocalStorage from "../hooks/useLocalStorage";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Tab,Tabs} from 'react-bootstrap'
 function App() {
   const [html,setHtml] = useLocalStorage('html','')
   const [css,setCss] = useLocalStorage('css','')
@@ -21,27 +22,35 @@ function App() {
 
   return (
     <>
-      <div className="pane top-pane">
+      <div className='place'>
+      <Tabs defaultActiveKey="HTML" id="uncontrolled-tab-example" >
+
+      <Tab eventKey="HTML" title="HTML" className='pane top-pane'>
         <Editor 
         language='xml'
-        displayName='HTML'
+        
         value={html}
         onChange={setHtml}
         />
+      </Tab>
+
+      <Tab eventKey="CSS" title="CSS" className='pane top-pane'>
         <Editor 
         language='css'
-        displayName='CSS'
+        
         value={css}
         onChange={setCss}
         />
+      </Tab>
+      <Tab eventKey="JS" title="JS" className='pane top-pane'>
         <Editor 
         language='js'
-        displayName='JS'
+        
         value={js}
         onChange={setJs}
         />
-      </div>
-      <div className="pane">
+      </Tab>
+      <Tab eventKey="Output" title="Output" className='pane'>
         <iframe 
         srcDoc={sourceDoc}
         title="Output"
@@ -49,8 +58,11 @@ function App() {
         frameBorder="0"
         width="100%"
         height="100%" />
-      </div>
+      </Tab>
+    </Tabs>
+    </div>
     </>
+
   )
 }
 
